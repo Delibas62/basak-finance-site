@@ -1,0 +1,6 @@
+body{margin:0;font-family:Georgia,serif;background:#141414;color:#EDE6D6;line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:48px 24px}
+h1,h2{font-family:Arial,Helvetica,sans-serif;letter-spacing:.02em}
+a{color:#E8552A}nav a{margin-right:18px;font-family:Arial,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.2em}
+code{background:#2a2a2a;padding:2px 6px;border-radius:4px;word-break:break-all}
+.small{font-size:14px;opacity:.75}
