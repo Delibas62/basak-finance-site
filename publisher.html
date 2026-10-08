@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Basak Finance Publisher</title><link rel="stylesheet" href="style.css">
+<style>.btn{display:inline-block;background:#E8552A;color:#141414;font-family:Arial,sans-serif;font-weight:bold;padding:14px 22px;border-radius:6px;text-decoration:none;margin:8px 0}.card{border:1px solid #333;border-radius:8px;padding:18px 22px;margin:18px 0}.ok{color:#19E39A}</style></head><body><main>
+<nav><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<h1>Basak Finance Publisher</h1>
+<p>Private publishing console for the Basak Finance channel. It connects the channel's own TikTok account through <strong>Login Kit</strong> and uploads finished episodes with the <strong>Content Posting API</strong>.</p>
+<div class="card"><h2>1. Connect TikTok account</h2>
+<p>Scopes requested: <code>user.info.basic</code> (show which account is connected), <code>video.upload</code> (send an episode to the inbox as a draft), <code>video.publish</code> (post an episode directly to the profile).</p>
+<a class="btn" id="connect" href="#">Connect TikTok</a>
+<p class="small" id="status">Not connected.</p></div>
+<div class="card"><h2>2. Publish an episode</h2>
+<p>After authorization the publisher service picks the next finished episode, uploads the 1080×1920 mp4 and either places it in the creator's inbox (draft) or posts it directly with the chosen privacy level. Progress is reported back here and to the owner's Telegram.</p>
+<p class="small">Episodes are our own editorial videos: narrated finance history, flat-poster illustrations, no third-party material.</p></div>
+<script>
+var KEY='sbaw50ccztmo6uxc4f', REDIRECT='https://delibas62.github.io/basak-finance-site/callback.html';
+var st=Math.random().toString(16).slice(2,10);
+document.getElementById('connect').href='https://www.tiktok.com/v2/auth/authorize/?client_key='+KEY+'&response_type=code&scope=user.info.basic%2Cvideo.upload%2Cvideo.publish&redirect_uri='+encodeURIComponent(REDIRECT)+'&state='+st;
+var q=new URLSearchParams(location.search); if(q.get('connected')){document.getElementById('status').innerHTML='<span class="ok">Connected as @'+(q.get('connected'))+'</span>';}
+</script>
+</main></body></html>

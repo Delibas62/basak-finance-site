@@ -1,11 +1,11 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Authorization — Basak Finance</title><link rel="stylesheet" href="style.css"></head><body><main>
-<nav><a href="index.html">Home</a></nav>
+<nav><a href="index.html">Home</a><a href="publisher.html">Publisher</a></nav>
 <h1>Authorization received</h1>
 <p id="msg">Reading the response…</p>
-<p id="code" style="display:none">Authorization code (copy this value):<br><code id="val"></code></p>
+<p id="code" style="display:none">Authorization code (copy this value):<br><code id="val"></code></p><p id="next" style="display:none"><a href="publisher.html?connected=basak_finance">Back to the publisher</a></p>
 <script>
 var q=new URLSearchParams(location.search);var c=q.get('code');var e=q.get('error');
-if(c){document.getElementById('msg').textContent='Success. Paste the code below into the .env file as TIKTOK_AUTH_CODE.';document.getElementById('val').textContent=c;document.getElementById('code').style.display='block';}
+if(c){document.getElementById('msg').textContent='Success. Paste the code below into the .env file as TIKTOK_AUTH_CODE.';document.getElementById('val').textContent=c;document.getElementById('code').style.display='block';document.getElementById('next').style.display='block';}
 else if(e){document.getElementById('msg').textContent='Authorization failed: '+e+' '+(q.get('error_description')||'');}
 else{document.getElementById('msg').textContent='Nothing to show. Start the authorization from the publisher tool.';}
 </script>
